@@ -6,11 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_profile.*
-import android.content.Intent
-import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.fragment_profile.view.*
-import scb.academy.jinglebell.R
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,18 +31,25 @@ class ProfileFragment : Fragment() {
 
 
         _view.submitButton.setOnClickListener {
-//            val name = nameEditText.text.toString()
-//            val intent = Intent(context, UserGreetingFragment::class.java)
-//            intent.putExtra("name", name)
-//            startActivity(intent)
-
+            val name = _view.nameEditText.text.toString()
             val fm = activity!!.supportFragmentManager
+
+            val fragment = Fragment()
+            val bundle = Bundle()
+            bundle.putString("name", name)
+            fragment.arguments = bundle
+
             val transaction = fm.beginTransaction()
-            transaction.replace(scb.academy.jinglebell.R.id.profile, UserGreetingFragment()).commit()
+            transaction.replace(scb.academy.jinglebell.R.id.profile, UserGreetingFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
         return _view
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
 
+    }
 }

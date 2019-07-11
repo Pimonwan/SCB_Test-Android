@@ -3,6 +3,7 @@ package scb.academy.jinglebell.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import scb.academy.jinglebell.extension.setImageUrl
 import scb.academy.jinglebell.vo.Song
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.logging.Logger
 
 class SongInfoActivity : AppCompatActivity() {
 

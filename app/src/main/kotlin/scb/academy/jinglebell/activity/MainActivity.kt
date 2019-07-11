@@ -2,7 +2,6 @@ package scb.academy.jinglebell.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import scb.academy.jinglebell.R
 import scb.academy.jinglebell.fragment.CountryListFragment
